@@ -1,0 +1,32 @@
+# Bug Hunter Agent configuration
+# Every target must also be covered by a scope_allow wildcard.
+
+targets:
+  - https://example.com
+
+scope_allow:
+  - "example.com"
+  - "*.example.com"
+
+scope_deny: []
+allow_private_hosts: false
+
+# Crawl budget
+max_pages: 150
+max_depth: 4
+concurrency: 8
+request_timeout: 12
+rate_limit_delay: 0.15
+wordlist_size: 120
+
+# Probes
+active_scans: true     # reflection/injection probes
+aggressive: false      # time-based blind SQLi / RCE / rate-limit tests (slow)
+
+# 24/7 daemon
+daemon: false
+interval_seconds: 86400
+
+# Output
+output_dir: reports
+state_file: state/findings.json

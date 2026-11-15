@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+reports/
+state/
+hunter.yaml
+.env
+*.log
